@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A personalized event guide">
+  <title>{{EVENT_TITLE}} — Event guide</title>
+  <style>
+    :root { color-scheme: light; --ink:#213b36; --muted:#526963; --paper:#fbfaf6; --card:#fff; --accent:#28685c; --line:#d7e4dd; --soft:#e6f3ee; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:920px; margin:0 auto; padding:2rem 1.25rem 4rem; }
+    header { padding:2.5rem; border-radius:1.25rem; background:var(--soft); border:1px solid var(--line); }
+    h1,h2,h3 { line-height:1.2; }
+    h1 { margin:.35rem 0; font-size:clamp(2rem,5vw,3.2rem); }
+    h2 { margin-top:2.25rem; padding-bottom:.5rem; border-bottom:1px solid var(--line); }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.12em; font-size:.8rem; font-weight:700; }
+    .meta { display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; color:var(--muted); }
+    section, .card { background:var(--card); border:1px solid var(--line); border-radius:.9rem; padding:1.1rem 1.35rem; margin:1rem 0; }
+    a { color:#155c50; text-underline-offset:.18em; overflow-wrap:anywhere; }
+    .note { color:var(--muted); }
+    .timeline { border-left:3px solid var(--line); padding-left:1rem; }
+    .timeline article { margin:1rem 0 1.5rem; }
+    footer { margin-top:3rem; border-top:1px solid var(--line); padding-top:1rem; color:var(--muted); font-size:.9rem; }
+    @media (max-width:600px) { main { padding:1rem .75rem 2rem; } header { padding:1.5rem; } }
+    @media print { body { background:#fff; } main { max-width:none; padding:0; } header,section,.card { break-inside:avoid; box-shadow:none; } a { color:inherit; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">Your event guide</div>
+      <h1>{{EVENT_TITLE}}</h1>
+      <div class="meta"><span>{{EVENT_DATE}}</span><span>{{EVENT_LOCATION}}</span></div>
+      <p>{{EVENT_SUMMARY}}</p>
+    </header>
+    <section aria-labelledby="venue-heading"><h2 id="venue-heading">Venue and arrival</h2>{{VENUE_AND_ARRIVAL}}</section>
+    <section aria-labelledby="schedule-heading"><h2 id="schedule-heading">Schedule</h2><div class="timeline">{{SCHEDULE_ITEMS}}</div></section>
+    <section aria-labelledby="food-heading"><h2 id="food-heading">Food and guest needs</h2>{{FOOD_AND_GUEST_NEEDS}}</section>
+    <section aria-labelledby="budget-heading"><h2 id="budget-heading">Budget snapshot</h2>{{BUDGET_SUMMARY}}</section>
+    <section aria-labelledby="actions-heading"><h2 id="actions-heading">What to confirm</h2>{{ACTIONS_AND_CAVEATS}}</section>
+    <section aria-labelledby="sources-heading"><h2 id="sources-heading">Sources</h2>{{SOURCE_LINKS}}</section>
+    <footer>Prepared for your event. Estimates and availability should be confirmed directly with providers.</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/hooks/approval_gate.py"
+          },
+          {
+            "type": "command",
+            "command": "python .claude/hooks/no_leak_guard.py"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/hooks/post_write_state.py"
+          }
+        ]
+      }
+    ]
+  }
+}

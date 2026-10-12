@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "run_id": "02-budget-retry",
+  "status": "awaiting_approval",
+  "fixture_mode": true,
+  "created_at": "2026-10-09T11:00:00Z",
+  "updated_at": "2026-10-09T11:29:00Z",
+  "retry_limit": 3,
+  "attempts": {"requirements-formalizer": 1, "venue-planner": 2, "vendor-research": 1, "catering-planner": 2, "program-planner": 1, "logistics-accessibility-planner": 1, "supplies-planner": 1, "budget-aggregator": 2, "validator": 2, "event-plan-builder": 1},
+  "agents": {"requirements-formalizer": "completed", "venue-planner": "completed", "vendor-research": "completed", "weather-planner": "skipped", "catering-planner": "completed", "program-planner": "completed", "logistics-accessibility-planner": "completed", "supplies-planner": "completed", "budget-aggregator": "completed", "validator": "completed", "event-plan-builder": "completed", "html-builder": "pending"},
+  "dependencies": {"budget-aggregator": ["venue-planner", "catering-planner", "program-planner", "logistics-accessibility-planner", "supplies-planner"]},
+  "artifact_paths": {"requirements": "artifacts/requirements.md", "quality_gate": "artifacts/quality-gate.md", "daily_plan": "artifacts/daily-plan.md"},
+  "written_artifacts": {},
+  "approval": {"status": "not_requested", "approved_plan_sha256": null, "confirmation": null, "approved_at": null, "revision": 0},
+  "final_output": "event-plan.html",
+  "history": [{"event": "quality-gate", "attempt": 1, "result": "FAIL", "finding": "USD 9,200 exceeds USD 8,500", "targeted_agents": ["venue-planner", "catering-planner"]}, {"event": "retry", "attempt": 2, "targeted_agents": ["venue-planner", "catering-planner", "budget-aggregator"]}, {"event": "quality-gate", "attempt": 2, "result": "PASS"}, {"event": "process-state", "result": "awaiting human approval"}]
+}

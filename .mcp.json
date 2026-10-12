@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "event-research": {
+      "command": "uv",
+      "args": ["run", "--directory", "mcp/event-research", "server.py"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      }
+    }
+  }
+}

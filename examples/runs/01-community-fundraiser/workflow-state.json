@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "run_id": "01-community-fundraiser",
+  "status": "completed",
+  "fixture_mode": true,
+  "created_at": "2026-10-09T10:00:00Z",
+  "updated_at": "2026-10-09T10:34:00Z",
+  "retry_limit": 3,
+  "attempts": {
+    "requirements-formalizer": 1,
+    "venue-planner": 1,
+    "vendor-research": 1,
+    "catering-planner": 1,
+    "program-planner": 1,
+    "logistics-accessibility-planner": 1,
+    "supplies-planner": 1,
+    "budget-aggregator": 1,
+    "validator": 1,
+    "event-plan-builder": 1,
+    "html-builder": 1
+  },
+  "agents": {
+    "requirements-formalizer": "completed",
+    "venue-planner": "completed",
+    "vendor-research": "completed",
+    "weather-planner": "skipped",
+    "catering-planner": "completed",
+    "program-planner": "completed",
+    "logistics-accessibility-planner": "completed",
+    "supplies-planner": "completed",
+    "budget-aggregator": "completed",
+    "validator": "completed",
+    "event-plan-builder": "completed",
+    "html-builder": "completed"
+  },
+  "dependencies": {
+    "group-a": [
+      "requirements-formalizer"
+    ],
+    "group-b": [
+      "requirements-formalizer",
+      "venue-planner",
+      "vendor-research"
+    ],
+    "group-c": [
+      "group-a",
+      "group-b"
+    ]
+  },
+  "artifact_paths": {
+    "requirements": "artifacts/requirements.md",
+    "quality_gate": "artifacts/quality-gate.md",
+    "daily_plan": "artifacts/daily-plan.md"
+  },
+  "written_artifacts": {
+    "artifacts/daily-plan.md": {
+      "sha256": "ef3848345a208d3de55bccce1a66bbb85633edd0221b1c1b91bd4709ce827fc1",
+      "updated_at": "2026-10-09T10:34:00Z"
+    },
+    "artifacts/quality-gate.md": {
+      "sha256": "0e8393c590ebfc6720100aa14a03ccb5b1ce50cc6d66c0643db00b9e089cefce",
+      "updated_at": "2026-10-09T10:34:00Z"
+    },
+    "artifacts/requirements.md": {
+      "sha256": "6b1dd61e67e67dd7d3d24c5cce2328137b299340a36ef6d55676925c639bca6a",
+      "updated_at": "2026-10-09T10:34:00Z"
+    },
+    "artifacts/research-summary.md": {
+      "sha256": "07a3ac361f6774caab2c50739e0005286a9870969c93319c95f4d1426f6dca91",
+      "updated_at": "2026-10-09T10:34:00Z"
+    },
+    "event-plan.html": {
+      "sha256": "0d87171c2443a2b64c0bc004187c8318183656292480ea6cfed18a5ec26bd838",
+      "updated_at": "2026-10-09T10:34:00Z"
+    },
+    "input.md": {
+      "sha256": "b0e579bd0b45bf6e20481d35b851a13471a8dc8b5c6776e051dd56e4b8863770",
+      "updated_at": "2026-10-09T10:34:00Z"
+    }
+  },
+  "approval": {
+    "status": "approved",
+    "approved_plan_sha256": "ef3848345a208d3de55bccce1a66bbb85633edd0221b1c1b91bd4709ce827fc1",
+    "confirmation": "APPROVE ef3848345a208d3de55bccce1a66bbb85633edd0221b1c1b91bd4709ce827fc1",
+    "approved_at": "2026-10-09T10:30:00Z",
+    "revision": 1
+  },
+  "final_output": "event-plan.html",
+  "history": [
+    {
+      "event": "quality-gate",
+      "result": "PASS",
+      "fixture": true
+    },
+    {
+      "event": "human-approval",
+      "result": "APPROVED",
+      "fixture": true,
+      "confirmation": "APPROVE ef3848345a208d3de55bccce1a66bbb85633edd0221b1c1b91bd4709ce827fc1"
+    }
+  ]
+}

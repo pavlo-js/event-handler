@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "03-resume-approval",
+  "status": "completed",
+  "fixture_mode": true,
+  "created_at": "2026-10-09T12:00:00Z",
+  "updated_at": "2026-10-09T12:38:00Z",
+  "retry_limit": 3,
+  "attempts": {
+    "requirements-formalizer": 1,
+    "venue-planner": 1,
+    "vendor-research": 1,
+    "catering-planner": 1,
+    "program-planner": 2,
+    "logistics-accessibility-planner": 1,
+    "supplies-planner": 1,
+    "budget-aggregator": 1,
+    "validator": 2,
+    "event-plan-builder": 2,
+    "html-builder": 1
+  },
+  "agents": {
+    "requirements-formalizer": "completed",
+    "venue-planner": "completed",
+    "vendor-research": "completed",
+    "weather-planner": "skipped",
+    "catering-planner": "completed",
+    "program-planner": "completed",
+    "logistics-accessibility-planner": "completed",
+    "supplies-planner": "completed",
+    "budget-aggregator": "completed",
+    "validator": "completed",
+    "event-plan-builder": "completed",
+    "html-builder": "completed"
+  },
+  "dependencies": {
+    "program-planner": [
+      "requirements-formalizer",
+      "logistics-accessibility-planner"
+    ],
+    "event-plan-builder": [
+      "all validated artifacts"
+    ]
+  },
+  "artifact_paths": {
+    "requirements": "artifacts/requirements.md",
+    "quality_gate": "artifacts/quality-gate.md",
+    "daily_plan": "artifacts/daily-plan.md"
+  },
+  "written_artifacts": {
+    "artifacts/daily-plan.md": {
+      "sha256": "25f8ea9d928891e23685cd47d347227dfd8e8979ecc2fc74164aa8526c454c04",
+      "updated_at": "2026-10-09T12:38:00Z"
+    },
+    "artifacts/quality-gate.md": {
+      "sha256": "c7d69b381bb3a641dafcb6f30692109462da20c4fd2bc4c47922f5160216ac6f",
+      "updated_at": "2026-10-09T12:38:00Z"
+    },
+    "artifacts/requirements.md": {
+      "sha256": "4b71b6013bcbe54eeee452a0c17fb7dee2600c6a7e235b7de71d5d6911a5ccab",
+      "updated_at": "2026-10-09T12:38:00Z"
+    },
+    "artifacts/research-summary.md": {
+      "sha256": "e3ddef95de44ae3c4395e88095cba6c852d2391b212492dc1f560e2d8490173e",
+      "updated_at": "2026-10-09T12:38:00Z"
+    },
+    "event-plan.html": {
+      "sha256": "cf5b9f02f885868eda62e2a2222be45515334dcf80b88bd3bd99cbce85a33944",
+      "updated_at": "2026-10-09T12:38:00Z"
+    },
+    "input.md": {
+      "sha256": "7a8a1ca485f81279606d006343b75808ee06034ec6c4f12490609c105fc83987",
+      "updated_at": "2026-10-09T12:38:00Z"
+    }
+  },
+  "approval": {
+    "status": "approved",
+    "approved_plan_sha256": "25f8ea9d928891e23685cd47d347227dfd8e8979ecc2fc74164aa8526c454c04",
+    "confirmation": "APPROVE 25f8ea9d928891e23685cd47d347227dfd8e8979ecc2fc74164aa8526c454c04",
+    "approved_at": "2026-10-09T12:35:00Z",
+    "revision": 2
+  },
+  "final_output": "event-plan.html",
+  "history": [
+    {
+      "event": "interruption",
+      "stage": "draft-review",
+      "result": "paused",
+      "completed_artifacts_preserved": true
+    },
+    {
+      "event": "resume",
+      "result": "input and completed artifact hashes verified"
+    },
+    {
+      "event": "human-approval",
+      "revision": 1,
+      "result": "REVISE",
+      "feedback": "Move refreshments earlier and keep a quiet room available throughout."
+    },
+    {
+      "event": "targeted-revision",
+      "agents": [
+        "program-planner",
+        "event-plan-builder",
+        "validator"
+      ]
+    },
+    {
+      "event": "human-approval",
+      "revision": 2,
+      "result": "APPROVED",
+      "confirmation": "APPROVE 25f8ea9d928891e23685cd47d347227dfd8e8979ecc2fc74164aa8526c454c04"
+    }
+  ]
+}
